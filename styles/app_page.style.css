@@ -1,5 +1,5 @@
 .protondb_rank_rows {
-    margin: 10px 0;
+    margin: 0 0 5px;
     font-size: 14px;
 }
 
@@ -25,7 +25,7 @@
 .protondb_rank_value {
     font-weight: bold;
     color: #fff;
-    padding: 2px 8px;
+    padding: 0px 8px 0 0;
     border-radius: 3px;
 }
 

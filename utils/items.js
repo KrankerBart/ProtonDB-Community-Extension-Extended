@@ -90,6 +90,7 @@ async function addIconToItem(item, isItemInSearchBox = false) {
     if (shouldSkipAddingIcon(item)) return;
 
     const appId = parseAppId(item);
+    console.log(appId)
     if (!appId) return;
 
     try {
@@ -139,11 +140,11 @@ function addElementsToItems(item, isItemInSearchBox = false) {
 
 function getNewItems() {
     const selector = 'a[href^="https://store.steampowered.com/app/"]:not([class*="ReviewScore"]):not(a[class*="ReviewScore"]), a.home_marketing_message.small.app_impression_tracked';
-    
+
     return Array.from(document.querySelectorAll(selector))
-        .filter(item => 
-            !items.has(item) && 
-            !hasAnyClass(item, ClassNamesToCheck) && 
+        .filter(item =>
+            !items.has(item) &&
+            !hasAnyClass(item, ClassNamesToCheck) &&
             !hasAnyParentClass(item, ClassNamesToCheckInParent)
         );
 }

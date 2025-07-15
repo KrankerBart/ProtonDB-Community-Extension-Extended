@@ -21,13 +21,15 @@ function createRankRow(rankTitle, rankValue, textColor) {
 
   const link = document.createElement("a");
   link.href = `https://protondb.com/app/${getAppId()}`;
-  link.textContent = "(?)";
+  link.target = '_blank'
+
+  link.append(rankValueSpan);
 
   const rankTitleSpan = document.createElement("span");
   rankTitleSpan.classList.add("responsive_reviewdesc_short");
   rankTitleSpan.textContent = rankTitle.toUpperCase();
 
-  summaryDiv.append(rankValueSpan, link, rankTitleSpan);
+  summaryDiv.append(link, rankTitleSpan);
 
   rankRow.append(subtitleDiv, summaryDiv);
 
@@ -36,6 +38,7 @@ function createRankRow(rankTitle, rankValue, textColor) {
 function createPlatformRow(isNative) {
   const platformRow = document.createElement("div");
   platformRow.classList.add("user_reviews_summary_row");
+  platformRow.id = "protondb_platform_row";
   const createDivWithClasses = (...classes) => {
     const div = document.createElement("div");
     div.classList.add(...classes);
