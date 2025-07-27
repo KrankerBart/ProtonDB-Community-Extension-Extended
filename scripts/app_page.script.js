@@ -73,16 +73,37 @@ async function initializeExtension() {
         return
       }
 
-      const { SHOW_PLATFORM = true, SHOW_TRENDING = true } = await chrome.storage.local.get(['SHOW_PLATFORM', 'SHOW_TRENDING'])
+      const {
+        SHOW_PLATFORM = true,
+        SHOW_TRENDING = true,
+        RANKING_POSITION = 'header',
+      } = await chrome.storage.local.get(['SHOW_PLATFORM', 'SHOW_TRENDING', 'RANKING_POSITION'])
 
-      // Create and add rank rows
       const rankRowsContainer = document.createElement('div')
+
       rankRowsContainer.classList.add('protondb_rank_rows')
-      rankRowsContainer.appendChild(createRankRow('ProtonDB Rank:', gameData.tier, gameData.tier))
       if (SHOW_TRENDING) {
         rankRowsContainer.appendChild(createRankRow('Trending Rank:', gameData.trendingTier, gameData.trendingTier))
       }
-      parentDiv.appendChild(rankRowsContainer)
+      if (RANKING_POSITION === 'header') {
+        // Create and add rank rows
+        const rankIconContainer = document.createElement('div')
+        rankIconContainer.classList.add('protondb_rank_icon')
+
+        rankIconContainer.appendChild(createRankIcon(gameData.tier))
+
+        appOtherSiteInfo.appendChild(rankIconContainer)
+      } else if (RANKING_POSITION === 'description') {
+        // Create and add rank rows
+        rankRowsContainer.classList.add('protondb_rank_rows')
+
+        rankRowsContainer.appendChild(createRankRow('ProtonDB Rank:', gameData.tier, gameData.tier))
+
+        parentDiv.appendChild(rankRowsContainer)
+      }
+
+      // parentDiv.appendChild(rankRowsContainer)
+      // appOtherSiteInfo.appendChild(rankIconContainer)
 
       // todo add condition from options to show this
       // Get platform data

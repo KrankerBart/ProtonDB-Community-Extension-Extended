@@ -1,3 +1,5 @@
+# This is a fork that aims to add a few more options for position and visibility of elements
+
 <h1 align="center" size="7">ProtonDB Community Extension for Chrome and Firefox</h1>
 <p align="center">
   <b>Elevate Your Linux Gaming Experience with ProtonDB Community Extension</b>
@@ -18,6 +20,7 @@ Enjoy the seamless integration of ProtonDB's compatibility data into Steam on bo
 ### **Tier Highlights**
 
 Quickly gauge a game's compatibility with Proton on Linux by viewing its tier on the Steam store page. These tiers, directly from ProtonDB, offer valuable insights at a glance.
+
 <p align="center">
   <img src="https://i.imgur.com/SdUCDAO.png" alt="Tier Highlights Feature"/>
 </p>
@@ -25,6 +28,7 @@ Quickly gauge a game's compatibility with Proton on Linux by viewing its tier on
 ### **Customizable Line Colors**
 
 Personalize your extension experience by adjusting the line colors for each compatibility tier. Enhance both information and aesthetics.
+
 <p align="center">
   <img src="https://i.imgur.com/MKeW0j9.png" alt="Color Picker Feature"/>
 </p>
@@ -32,6 +36,7 @@ Personalize your extension experience by adjusting the line colors for each comp
 ### **Search Bar Compatibility**
 
 Save time by accessing compatibility tiers directly in Steam search results. Make decisions without needing to navigate to individual game pages.
+
 <p align="center">
   <img src="https://i.imgur.com/LFUvwoV.png" alt="Search Feature"/>
 </p>
@@ -39,6 +44,7 @@ Save time by accessing compatibility tiers directly in Steam search results. Mak
 ### **App Page Integration**
 
 On a game's app page, the extension continues to provide valuable information. The compatibility tier and deck verification status is prominently showcased, aiding your decision-making process.
+
 <p align="center">
   <img src="https://i.imgur.com/DRLiFzy.png" alt="App Page Feature"/>
 </p>
@@ -54,6 +60,7 @@ Tailor the extension's appearance in real time. Open the extension menu to adjus
 ### **Steam Deck Verification Indicator**
 
 Identify games verified for the Steam Deck handheld device. The indicator appears on both store pages and app pages, offering insight into optimized performance on the Steam Deck.
+
 <p align="center">
   <img src="https://i.imgur.com/bGwXAsA.png" alt="Steam Deck Feature"/>
 </p>
@@ -69,6 +76,7 @@ Install the extension on your preferred browser, whether it's Chrome or Firefox,
 ### **Wide Compatibility**
 
 This extension supports almost every section of Steam where games are the main priority, providing a comprehensive experience for Linux gamers.
+
 <p align="center">
   <img src="https://i.imgur.com/1HcVIrJ.png" alt="Wide Compatibility Feature"/>
 </p>
@@ -87,7 +95,6 @@ This extension supports almost every section of Steam where games are the main p
   <img src="https://i.imgur.com/HB3Aqx7.png" alt="Wishlist Feature"/>
 </p>
 
-
 ## Installing From Web Stores
 
 ### **Chrome**
@@ -101,21 +108,20 @@ This extension supports almost every section of Steam where games are the main p
 2. Click "Add to Firefox" to install.
 3. 4. Load the Extension and Grant the Permissions From 'Manage Extension' Tab. (If vertical lines doesn't have color)
 
+## Installing Manually
 
- ## Installing Manually
-
- ### **Chrome and Other Chromium Based Browsers**
+### **Chrome and Other Chromium Based Browsers**
 
 1. Download the Latest Chrome Release From [Releases](https://github.com/Trsnaqe/ProtonDB-Community-Extension/releases)
-2. Go to the extensions page: ```chrome://extensions```
+2. Go to the extensions page: `chrome://extensions`
 3. Drop the Zip file
 
 ### **Firefox**
+
 1. Download the Latest Firefox Release From [Releases](https://github.com/Trsnaqe/ProtonDB-Community-Extension/releases)
-2.  Go to the following url: ```about:debugging```
+2. Go to the following url: `about:debugging`
 3. Click on This Firefox and Click on Load Temporary Extension
 4. Load the Extension and Grant the Permissions From 'Manage Extension' Tab.
-
 
 ## Usage
 
@@ -146,7 +152,7 @@ We extend our gratitude to these individuals and projects for their contribution
 ## Contact
 
 > Developers: [_Fudayl Çavuş_](https://github.com/fudaylcavus) |
- [_Trsnaqe_](https://github.com/Trsnaqe)
+> [_Trsnaqe_](https://github.com/Trsnaqe)
 
 Questions, support, or feedback? Reach out through these channels:
 

@@ -29,6 +29,27 @@
     border-radius: 3px;
 }
 
+.protondb_rank_icon {
+    float: left;
+    width: 32px;
+    margin-right: 7px;
+}
+
+.protondb_rank_icon .protondb_rank{
+    border-radius: 2px;
+    height: 32px;
+}
+
+.protondb_rank_icon:hover .protondb_rank{
+    filter: brightness(1.05);
+}
+
+.protondb_rank_icon .protondb_rank img{
+    vertical-align: top;
+    margin: 2px 0;
+    padding: 2px;
+}
+
 /* Rank colors */
 .platinum { background-color: #b4c7dc; }
 .gold { background-color: #cfb53b; }
