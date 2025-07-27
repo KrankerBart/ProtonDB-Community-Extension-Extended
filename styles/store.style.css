@@ -17,6 +17,12 @@
   filter: contrast(1.8);
 }
 
+.apphub_OtherSiteInfo .deck-status-icon {
+  position: relative;
+  float: left;
+  margin-right: 5px;
+}
+
 .vertical-line {
   background-color: transparent;
   width: 4px;

@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@200;400&display=swap");
 
 * {
@@ -89,4 +90,107 @@ body {
   margin-top: 8px;
   color: #858592;
   float: right;
+}
+
+
+/* Custom styled checkboxes for options */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #43434a;
+  border-radius: 5px;
+  background: #23242b;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+input[type="checkbox"]:focus {
+  outline: none;
+  border-color: #FF4F78;
+  box-shadow: 0 0 0 2px #CFB53B44;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #FF4F78;
+  border-color: #FF4F78;
+}
+
+input[type="checkbox"]:checked::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 6px;
+  height: 12px;
+  border: solid #23242b;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+label > input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+label {
+  cursor: pointer;
+  user-select: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Custom styled radio buttons for options */
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #43434a;
+  border-radius: 50%;
+  background: #23242b;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+input[type="radio"]:focus {
+  outline: none;
+  border-color: #FF4F78;
+  box-shadow: 0 0 0 2px #CFB53B44;
+}
+
+input[type="radio"]:checked {
+  border-color: #FF4F78;
+  background-color: #CFB53B22;
+}
+
+input[type="radio"]:checked::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FF4F78;
+}
+
+label > input[type="radio"] {
+  margin-right: 8px;
+}
+
+.divider {
+  margin: 16px auto;
+  display: block;
+  width: 90%;
 }

@@ -101,3 +101,5 @@ const ParentRelativeClassCheck = [
     LARGE_GAME_ITEM,
     IMPRESSION_TRACKED_ELEMENT,
 ];
+
+window.SHOW_PLATFORM = true;

@@ -4,8 +4,8 @@ setColors();
 const newItems = getNewItems();
 if (newItems.length > 0) {
     newItems.forEach((item) => {
-        if (!items.has(item) && 
-            !hasAnyClass(item, ClassNamesToCheck) && 
+        if (!items.has(item) &&
+            !hasAnyClass(item, ClassNamesToCheck) &&
             !hasAnyParentClass(item, ClassNamesToCheckInParent)) {
             addElementsToItems(item);
         }

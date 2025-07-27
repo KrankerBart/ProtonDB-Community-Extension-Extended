@@ -1,130 +1,163 @@
 function createRankRow(rankTitle, rankValue, textColor) {
-  const rankRow = document.createElement("div");
-  rankRow.classList.add("user_reviews_summary_row");
+  const rankRow = document.createElement('div')
+  rankRow.classList.add('user_reviews_summary_row')
 
   const createDivWithClasses = (...classes) => {
-    const div = document.createElement("div");
-    div.classList.add(...classes);
-    return div;
-  };
+    const div = document.createElement('div')
+    div.classList.add(...classes)
+    return div
+  }
 
-  const subtitleDiv = createDivWithClasses("subtitle", "column");
-  subtitleDiv.textContent = rankTitle;
+  const subtitleDiv = createDivWithClasses('subtitle', 'column')
+  subtitleDiv.textContent = rankTitle
 
-  const summaryDiv = createDivWithClasses("summary", "column", "protondb_rank");
+  const summaryDiv = createDivWithClasses('summary', 'column', 'protondb_rank')
 
-  const rankValueSpan = document.createElement("span");
-  rankValueSpan.classList.add("protondb_rank_value");
-  rankValueSpan.textContent = rankValue || "N/A";
-  rankValueSpan.style.color = colors[textColor] || colors.unknown;
-  rankValueSpan.setAttribute("data-tier", rankValue);
+  const rankValueSpan = document.createElement('span')
+  rankValueSpan.classList.add('protondb_rank_value')
+  rankValueSpan.textContent = rankValue || 'N/A'
+  rankValueSpan.style.color = colors[textColor] || colors.unknown
+  rankValueSpan.setAttribute('data-tier', rankValue)
 
-  const link = document.createElement("a");
-  link.href = `https://protondb.com/app/${getAppId()}`;
-  link.textContent = "(?)";
+  const link = document.createElement('a')
+  link.href = `https://protondb.com/app/${getAppId()}`
+  link.target = '_blank'
 
-  const rankTitleSpan = document.createElement("span");
-  rankTitleSpan.classList.add("responsive_reviewdesc_short");
-  rankTitleSpan.textContent = rankTitle.toUpperCase();
+  link.append(rankValueSpan)
 
-  summaryDiv.append(rankValueSpan, link, rankTitleSpan);
+  const rankTitleSpan = document.createElement('span')
+  rankTitleSpan.classList.add('responsive_reviewdesc_short')
+  rankTitleSpan.textContent = rankTitle.toUpperCase()
 
-  rankRow.append(subtitleDiv, summaryDiv);
+  summaryDiv.append(link, rankTitleSpan)
 
-  return rankRow;
+  rankRow.append(subtitleDiv, summaryDiv)
+
+  return rankRow
 }
 function createPlatformRow(isNative) {
-  const platformRow = document.createElement("div");
-  platformRow.classList.add("user_reviews_summary_row");
+  const platformRow = document.createElement('div')
+  platformRow.classList.add('user_reviews_summary_row')
+  platformRow.id = 'protondb_platform_row'
   const createDivWithClasses = (...classes) => {
-    const div = document.createElement("div");
-    div.classList.add(...classes);
-    return div;
-  };
-  const icon = isNative ? "✔" : "✘";
-  const subtitleDiv = createDivWithClasses("subtitle", "column");
-  subtitleDiv.textContent = "Native Linux?";
+    const div = document.createElement('div')
+    div.classList.add(...classes)
+    return div
+  }
+  const icon = isNative ? '✔' : '✘'
+  const subtitleDiv = createDivWithClasses('subtitle', 'column')
+  subtitleDiv.textContent = 'Native Linux?'
 
-  const summaryDiv = createDivWithClasses(
-    "summary",
-    "column",
-    "protondb_isNative"
-  );
+  const summaryDiv = createDivWithClasses('summary', 'column', 'protondb_isNative')
 
-  const platformValueSpan = document.createElement("span");
-  platformValueSpan.classList.add("protondb_isNative_value");
-  platformValueSpan.textContent = icon;
-  platformValueSpan.style.color = "#67c1f5";
-  platformValueSpan.setAttribute("data-isNative", isNative);
+  const platformValueSpan = document.createElement('span')
+  platformValueSpan.classList.add('protondb_isNative_value')
+  platformValueSpan.textContent = icon
+  platformValueSpan.style.color = '#67c1f5'
+  platformValueSpan.setAttribute('data-isNative', isNative)
 
-  const link = document.createElement("a");
-  link.href = `https://protondb.com/app/${getAppId()}`;
-  link.textContent = "(?)";
+  const link = document.createElement('a')
+  link.href = `https://protondb.com/app/${getAppId()}`
+  link.textContent = '(?)'
 
-  const rankTitleSpan = document.createElement("span");
-  rankTitleSpan.classList.add("responsive_reviewdesc_short");
-  rankTitleSpan.textContent = isNative ? "Yes" : "No";
+  const rankTitleSpan = document.createElement('span')
+  rankTitleSpan.classList.add('responsive_reviewdesc_short')
+  rankTitleSpan.textContent = isNative ? 'Yes' : 'No'
 
-  summaryDiv.append(platformValueSpan, link, rankTitleSpan);
+  summaryDiv.append(platformValueSpan, link, rankTitleSpan)
 
-  platformRow.append(subtitleDiv, summaryDiv);
-  return platformRow;
+  platformRow.append(subtitleDiv, summaryDiv)
+  return platformRow
+}
+
+function createRankIcon(textColor) {
+  const rankRow = document.createElement('div')
+  rankRow.classList.add('user_reviews_summary_row')
+
+  const createDivWithClasses = (...classes) => {
+    const div = document.createElement('div')
+    div.classList.add(...classes)
+    return div
+  }
+
+  const summaryDiv = createDivWithClasses('summary', 'column', 'protondb_rank')
+  summaryDiv.style.backgroundColor = colors[textColor] || colors.unknown
+
+  const rankValueSpan = document.createElement('img')
+  rankValueSpan.classList.add('protondb_rank_value')
+
+  const icon = document.createElement('img')
+  var imgURL = chrome.runtime.getURL(`assets/protondb-icon.svg`)
+  icon.src = imgURL
+  // rankValueSpan.src = `https://protondb.com/app/${getAppId()}/icon/${rankValue}.png`
+  // rankValueSpan.alt = rankValue || 'N/A'
+  // rankValueSpan.setAttribute('data-tier', rankValue)
+
+  const link = document.createElement('a')
+  link.href = `https://protondb.com/app/${getAppId()}`
+  link.target = '_blank'
+
+  link.append(icon)
+
+  summaryDiv.append(link)
+
+  rankRow.append(summaryDiv)
+
+  return rankRow
 }
 
 function createIconElement(status, iconUrl) {
-  const icon = document.createElement("img");
-  var imgURL = chrome.runtime.getURL(`assets/${iconUrl}.png`);
-  icon.src = imgURL;
-  icon.classList.add("deck-status-icon");
-  icon.setAttribute("data-ds-deck-tier", status);
-  return icon;
+  const icon = document.createElement('img')
+  var imgURL = chrome.runtime.getURL(`assets/${iconUrl}.png`)
+  icon.src = imgURL
+  icon.classList.add('deck-status-icon')
+  icon.setAttribute('data-ds-deck-tier', status)
+  return icon
 }
 
 function createLineElement() {
-  const line = document.createElement("div");
-  line.classList.add("vertical-line");
-  return line;
+  const line = document.createElement('div')
+  line.classList.add('vertical-line')
+  return line
 }
 
 function insertLineBeforeItem(line, item) {
-  if (item.parentNode) item.parentNode.insertBefore(line, item);
-  item.prepend(line);
+  if (item.parentNode) item.parentNode.insertBefore(line, item)
+  item.prepend(line)
 }
 
 function insertIconBeforeItem(icon, item) {
-  if (item.parentNode) item.parentNode.insertBefore(icon, item);
-  item.prepend(icon);
+  if (item.parentNode) item.parentNode.insertBefore(icon, item)
+  item.prepend(icon)
 }
 
 function insertIconInList(icon, item) {
-  if (!item) return;
-  const gameListing = item.querySelector(".responsive_search_name_combined");
-  const reviewBox = gameListing.querySelector(
-    ".col.search_reviewscore.responsive_secondrow"
-  );
-  makeItemRelative(reviewBox);
-  const review = reviewBox.querySelector(".search_review_summary");
-  icon.classList.add("on-list");
-  if (review) review.prepend(icon);
+  if (!item) return
+  const gameListing = item.querySelector('.responsive_search_name_combined')
+  const reviewBox = gameListing.querySelector('.col.search_reviewscore.responsive_secondrow')
+  makeItemRelative(reviewBox)
+  const review = reviewBox.querySelector('.search_review_summary')
+  icon.classList.add('on-list')
+  if (review) review.prepend(icon)
 }
 
 function colorLineElement(line, color) {
-  line.style.backgroundColor = color;
+  line.style.backgroundColor = color
 }
 
 function insertIconInTabList(icon, item) {
-  if (item.classList.contains("tab_item_overlay")) {
-    item = item.parentNode;
+  if (item.classList.contains('tab_item_overlay')) {
+    item = item.parentNode
   }
-  const details = item.querySelector(".tab_item_details");
-  if (!details) return false;
+  const details = item.querySelector('.tab_item_details')
+  if (!details) return false
 
-  icon.classList.add("on-tab-list");
+  icon.classList.add('on-tab-list')
 
-  const platformImgs = details.querySelectorAll(".platform_img");
+  const platformImgs = details.querySelectorAll('.platform_img')
 
   if (platformImgs.length > 0) {
-    const latestPlatformImg = platformImgs[platformImgs.length - 1];
-    latestPlatformImg.insertAdjacentElement("afterend", icon);
+    const latestPlatformImg = platformImgs[platformImgs.length - 1]
+    latestPlatformImg.insertAdjacentElement('afterend', icon)
   }
 }
