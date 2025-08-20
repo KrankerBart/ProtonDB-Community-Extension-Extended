@@ -128,6 +128,7 @@ function isItemInTabList(item) {
 
 function addElementsToItems(item, isItemInSearchBox = false) {
   if (!item) return
+  if(item.classList.contains('top_promo') || item.classList.contains('hardware_steamdeck_banner')) return
   addLineToItem(item)
   addIconToItem(item, isItemInSearchBox)
   items.add(item)
